@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boostrap 5 y Popper-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/727f593aef.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <!-- Google Fonts-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Exilia Engine</title>
+</head>
+
+<body class="" style="background-color: #aaa69d;">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mx-auto w-25 rounded-pill mt-2">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html"><strong><i class="fa-solid fa-dice-d20"></i> EXILIA</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active fw-bold" aria-current="page" href="./index.html">Poder de Ejercitos</a>
+            <a class="nav-link fw-bold" href="./recursos.html">Recursos</a>
+            <a class="nav-link fw-bold" href="./comida.html">Comida</a>
+          </div>
+        </div>
+      </div>
+  </nav>
+
+<!-- COMIDA -->
+
+  <div class="d-flex my-4 justify-content-center">
+
+    <div style="width: 50px"class="d-flex flex-column text-center mt-auto me-2">
+
+      <span class="mt-0 mb-4"><strong><i class="fa-solid fa-dice-d20 fs-3"></i>Dados</strong></span>
+      <!-- <p style="visibility: hidden;"class="mb-3 mt-5 border border-3 border-dark shadow bg-light">0</p>
+       -->
+
+      <span id="dadosWorkers" class="mb-5 mt-3 border border-3 border-dark shadow bg-light rounded-pill">0</span>
+      <p style="visibility: hidden;"class="mb-0 mt-5 border border-3 border-dark shadow bg-light">0</p>
+      <p style="visibility: hidden;"class="mb-0 mt-5 border border-3 border-dark shadow bg-light">0</p>
+
+      <span id="dadosEdificioBasico" class="text-success mt-4 mb-2 border border-3 border-dark shadow bg-light rounded-pill">0</span>
+      <span style="visibility: hidden;" id="dadosEdificioEspecial" class="text-danger mt-5 mb-5 border border-3 border-dark shadow bg-light rounded-pill">0</span>
+      <span id="dadosTerreno" class="text-primary mt-2 mb-5 border border-3 border-dark shadow bg-light rounded-pill">0</span>
+
+      
+    </div>
+
+    <form style="width: 400px; background-color: #FEE2C5 ;"class="text-center border border-dark shadow rounded rounded-3 me-5">
+      <h1>Comida</h1>
+
+      <div class="mb-3 d-flex flex-column">
+        <label for="trabajadores" class="form-label">Trabajadores</label>
+        <input style="width: 300px" type="text" class="mx-auto form-control" id="trabajadores">  <!-- TRABAJADORES -->
+      </div>
+
+      <p><strong>Bonificacion de Casilla</strong></p>
+
+      <div class="d-flex justify-content-center">
+          <div class="form-check mx-2 my-auto">
+              <input type="checkbox" class="form-check-input" id="llanura" value="false"> <!--  LLANURA x2 -->
+              <label class="form-check-label" for="llanura">Llanura Meseta Desierto </label> 
+          </div>
+          <div class="form-check mx-2 my-auto">
+              <input type="checkbox" class="form-check-input" id="bosque" value="false"> <!--  BOSQUE x3 -->
+              <label class="form-check-label" for="bosque">Bosque  Montaña </label>
+          </div>
+      </div>
+
+      <hr>
+
+      <p><strong>Edificios Básicos</strong></p>
+
+      <div class="d-flex justify-content-center">
+          <div class="form-check mx-2 my-auto">
+              <input type="checkbox" class="form-check-input" id="edi1" value="false">  <!-- --- ED  1 -->
+              <label class="form-check-label" for="edi1">+1 <i class="fa-solid fa-dice-d20"></i></label>
+          </div>
+          <div class="form-check mx-2 my-auto">
+              <input type="checkbox" class="form-check-input" id="edi2" value="false">  <!----- ED  2 -->
+              <label class="form-check-label" for="edi2">+2 <i class="fa-solid fa-dice-d20"></i></label>
+          </div>
+          <div class="form-check mx-2 my-auto">
+            <input type="checkbox" class="form-check-input" id="edi3" value="false">  <!-- --- ED 3 -->
+            <label class="form-check-label" for="edi3">+3 <i class="fa-solid fa-dice-d20"></i></label>
+        </div>
+
+      </div>
+
+      <div class="mb-3 mt-4 d-flex flex-column">
+        <label for="masd20" class="form-label fw-bold text-danger">Solo si necesitas más dados</label>
+        <input id="masd20" placeholder="Mete el número de dados. EJ: 5"style="width: 300px" type="text" class="mx-auto form-control" >  <!-- masD20 -->
+      </div>
+
+      <hr>
+
+      <p><strong>Edificios Especiales</strong></p>
+
+      <div class="d-flex justify-content-center">
+          <div class="form-check mx-2 my-auto">
+              <input type="checkbox" class="form-check-input" id="especial1" value="false">  <!--  ESP  1 -->
+              <label class="form-check-label" for="edi1">x2</label>
+          </div>
+          <div class="form-check mx-2 my-auto">
+              <input type="checkbox" class="form-check-input" id="especial2" value="false">  <!--  ESP  2 -->
+              <label class="form-check-label" for="edi2">x3</label>
+          </div>
+          <div class="form-check mx-2 my-auto">
+            <input type="checkbox" class="form-check-input" id="especial3" value="false">  <!--  ESP 3 -->
+            <label class="form-check-label" for="edi3">x4</label>
+        </div>
+      </div>
+
+      <hr>
+
+      <p><strong>Dado de Terreno</strong></p>
+
+      <div class="d-flex justify-content-center mb-3">
+          <div class="form-check mx-2 my-auto">
+              <input type="checkbox" class="form-check-input" id="terrenoUno" value="false"> <!--  DADO 1 -->
+              <label class="form-check-label" for="terrenoUno">+1 <i class="fa-solid fa-dice-d20"></i></label>
+          </div>
+          <div class="form-check mx-2 my-auto">
+              <input type="checkbox" class="form-check-input" id="terrenoDos" value="false"> <!--  DADO 2 -->
+              <label class="form-check-label" for="terrenoDos">+2 <i class="fa-solid fa-dice-d20"></i></label>
+          </div>
+          
+      </div>
+
+    </form>
+  </div>
+
+  <button id="calcular" class="btn btn-dark mt-4 mb-3 d-flex mx-auto shadow">Calcular Comida</button>
+      <div style="width: 400px; background-color: #FEE2C5;" class="d-flex flex-column text-center mx-auto border border-dark shadow rounded-3">
+          <h2 class="">Comida conseguida</h2>
+          <h1 class="text-success fw-bold" id="recursoFinal">0</h1>
+      </div>
+
+      <p class="text-center mt-5"><i class="fa-solid fa-copyright"></i> No Copyright || Creado por <a href="https://twitter.com/Karim_Aitt">Karim Ait</a></p>
+
+  <script src="./comida.js"></script>
+</body>
