@@ -9,6 +9,8 @@ let edTier2 = document.getElementById("edTier2")   // +2 D20
 
 let terrenoUno = document.getElementById("terrenoUno") // +1 D20
 let terrenoDos = document.getElementById("terrenoDos")  // +2 D20
+let hierro = document.getElementById("hierro");
+let oro = document.getElementById("oro");
 
 
 let recursoFinal = document.getElementById("recursoFinal")
@@ -48,15 +50,30 @@ const edificios = () => {
 }
 
 const dadoTerreno = () => {
-  if(terrenoUno.checked === true){
+  if(terrenoUno.checked === true)
+  {
     let x = randomD20()
     dadoDadoTerreno.innerHTML = x
     return x
-  } else if(terrenoDos.checked === true){
+  } 
+  else if(terrenoDos.checked === true)
+  {
     let x = randomD20()
     let y = randomD20()
     dadoDadoTerreno.innerHTML = x + y
     return x + y
+  } 
+  else if(hierro.checked === true)
+  {
+    let x = Math.floor(Math.random()*10)+1
+    dadoDadoTerreno.innerHTML = x
+    return x
+  } 
+  else if(oro.checked === true)
+  {
+    let x = Math.floor(Math.random()*6)+1
+    dadoDadoTerreno.innerHTML = x
+    return x
   }
 }
 
@@ -67,12 +84,32 @@ buttonCalcular.addEventListener("click", function(){
   let dadosBonus = 0;
 
   let countLeñadores =  Math.floor(recursoTotal / 10)
-   
-  for(let i=0; i < countLeñadores; i++){
-    let x = randomD20()
-    recursoTotal += x;
-    dadosBonus += x;
-  }
+  
+  if(hierro.checked === true)
+  {
+    for(let i=0; i < countLeñadores; i++){
+      let x = Math.floor(Math.random()*10)+1
+      recursoTotal += x;
+      dadosBonus += x;
+    }
+  } 
+    else if(oro.checked === true)
+    {
+      for(let i=0; i < countLeñadores; i++){
+        let x = Math.floor(Math.random()*6)+1
+        recursoTotal += x;
+        dadosBonus += x;
+      }
+    } 
+      else 
+      {
+        for(let i=0; i < countLeñadores; i++){
+          let x = randomD20()
+          recursoTotal += x;
+          dadosBonus += x;
+        }
+      }
+  
 
   dadoTrabajador.innerHTML = dadosBonus
   recursoFinal.innerHTML = (recursoTotal+boniTerreno()+edificios()+dadoTerreno())
