@@ -43,10 +43,14 @@
 
         <div style="width: 50px"class="d-flex flex-column text-center mt-auto me-2">
             <p ><strong><i class="fa-solid fa-dice-d20 fs-3"></i>Dados</strong></p>
-            <p id="dadoTrabajador" class="my-4  border border-3 border-dark shadow bg-light rounded-pill">20</p>
-            <p style="visibility: hidden" class="my-5  border border-3 border-dark shadow">23</p>
-            <p id="dadoEdificios" class="my-2  border border-3 border-dark shadow bg-light rounded-pill">23</p>
-            <p id="dadoDadoTerreno" class="mt-5  border border-3 border-dark shadow bg-light rounded-pill">23</p>
+            <p id="dadoTrabajador" class="my-2  border border-3 border-dark shadow bg-light rounded-pill">0</p>
+
+            <p style="visibility: hidden;"class="mb-2 mt-5 border border-3 border-dark shadow bg-light">0</p>
+
+            <p id="dadoEdificios" class="mt-4 mb-4 border border-3 border-dark shadow bg-light rounded-pill">0</p>
+            <p id="dadoDadoTerreno" class="mt-5 mb-5 border border-3 border-dark shadow bg-light rounded-pill">0</p>
+            <p id="dadoHierro" class="mb-4 mt-4 border border-3 border-dark shadow bg-light rounded-pill">0</p>
+            <p id="dadoOro" class="mb-5 mt-5 border border-3 border-dark shadow bg-light rounded-pill">0</p>
         </div>
 
         <form style="width: 400px; background-color: #FEE2C5 ;"class="text-center border border-dark shadow rounded rounded-3 me-5">
@@ -98,16 +102,39 @@
                     <input type="checkbox" class="form-check-input" id="terrenoDos" value="false"> <!-- -------- DADO 2 -->
                     <label class="form-check-label" for="terrenoDos">+2 <i class="fa-solid fa-dice-d20"></i></label>
                 </div>
-                <div class="form-check mx-2 my-auto">
-                    <input type="checkbox" class="form-check-input" id="hierro" value="false"> <!-- -------- DADO 1 -->
-                    <label class="form-check-label" for="hierro">Hierro</i></label>
-                </div>
-                <div class="form-check mx-2 my-auto">
-                    <input type="checkbox" class="form-check-input" id="oro" value="false"> <!-- -------- DADO 1 -->
-                    <label class="form-check-label" for="oro">Oro</label>
-                </div>
+                
             </div>
             
+            <hr>
+
+            <p><strong>Hierro</strong></p>
+
+            <div class="d-flex justify-content-center">
+                <div class="form-check mx-2 my-auto">
+                    <input type="checkbox" class="form-check-input" id="hierroTier1" value="false">  <!-- ---- hierro TIER 1 -->
+                    <label class="form-check-label" for="hierroTier1">Hierro 1D10</label>
+                </div>
+                <div class="form-check mx-2 my-auto">
+                    <input type="checkbox" class="form-check-input" id="hierroTier2" value="false">  <!-- ---- hierro TIER 2 -->
+                    <label class="form-check-label" for="hierroTier2">Hierro 2D10</label>
+                </div>
+            </div>
+
+            <hr>
+
+            <p><strong>Oro</strong></p>
+
+            <div class="d-flex justify-content-center">
+                <div class="form-check mx-2 my-auto">
+                    <input type="checkbox" class="form-check-input" id="oroTier1" value="false">  <!-- ------ Oro TIER 1 -->
+                    <label class="form-check-label" for="oroTier1">Oro 1D6</label>
+                </div>
+                <div class="form-check mx-2 my-auto">
+                    <input type="checkbox" class="form-check-input" id="oroTier2" value="false">  <!-- -------- Oro TIER 2 -->
+                    <label class="form-check-label" for="oroTier2">Oro 2D6 </label>
+                </div>
+            </div>
+
         </form>
 
         
