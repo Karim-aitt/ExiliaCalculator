@@ -14,77 +14,102 @@
     <!-- Google Fonts-->
     <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <title>Exilia Engine</title>
 </head>
 
 <body class="" style="background-color: #FEE2C5;">
-    <h1 class="text-center">EJERCITO</h1>
-    <div class="container d-flex justify-content-center my-3">
 
-        <div class="d-flex flex-column text-center mx-2">
-            <label for="espadachin">Espadachines</label>
-            <input id="espadachin" type="text">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html"><strong>EXILIA</strong></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="./index.html">Poder de Ejercitos</a>
+              <a class="nav-link" href="./recursos.html">Recursos</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <!-- <h1 class="text-center">PODER DE EJERCITOS</h1> -->
+
+    <div 
+    style="width: 1000px"
+    class="container shadow d-flex justify-content-center my-5 border border-secondary border-3 rounded">
+        
+        <div class="my-auto">
+            <div class="d-flex flex-column text-center mx-2">
+                <label for="espadachin">Espadachines</label>
+                <input class="rounded" id="espadachin" type="text">
+            </div>
+            
+            <div class="d-flex flex-column text-center mx-2">
+                <label for="arquero">Arqueros</label>
+                <input class="rounded" id="arquero" type="text">
+            </div>
+            
+            <div class="d-flex flex-column text-center mx-2">
+                <label for="lancero">Lanceros</label>
+                <input class="rounded" id="lancero" type="text">
+            </div>
+            
+            <div class="d-flex flex-column text-center mx-2">
+                <label for="caballero">Caballeria</label>
+                <input class="rounded" id="caballero" type="text">
+            </div>
+            
+            <div class="d-flex flex-column text-center mx-2">
+                <label for="boniDeGeneral">Bonificacion de General</label>
+                <input class="rounded" id="boniDeGeneral" type="text">
+            </div>
+            
+            <div class="d-flex flex-column text-center mx-2">
+                <label for="boniDeCasilla">Bonificacion de Casilla</label>
+                <input class="rounded" id="boniDeCasilla" type="text">
+            </div>
+        </div>
+
+        <div class="d-flex flex-column my-auto ms-3">
+            <h1 class="mt-3 border border-3 mx-auto p-4" id="Resultado"  style="background-color: #FEFBE7;">Resultado</h1>
+            <button class="btn btn-success mx-auto" id="buttonResultado">Pulsar</button>
+        </div>
+
+        <div 
+        style="width: 300px; border-radius: 50px;"
+        class="border border-dark border-3 my-3 ms-auto">
+
+        <div id="divDado20" class="d-flex flex-column text-center mx-2 my-3">
+            <h1 class="" id="numeroDado1"><i class="fa-solid fa-dice-d20"></i></h1>
+            <button class="btn btn-success mx-auto" id="dado1">DADO <strong>20</strong></button>
         </div>
         
-        <div class="d-flex flex-column text-center mx-2">
-            <label for="arquero">Arqueros</label>
-            <input id="arquero" type="text">
+        <div id="divDado10" class="d-flex flex-column text-center mx-2 my-3">
+            <h1 id="numeroDado2"><i class="fa-solid fa-dice-d6"></i></h1>
+            <button class="btn btn-success mx-auto" id="dado2">DADO <strong>10</strong></button>
         </div>
         
-        <div class="d-flex flex-column text-center mx-2">
-            <label for="lancero">Lanceros</label>
-            <input id="lancero" type="text">
+        <div id="divDado6" class="d-flex flex-column text-center mx-2 my-3">
+            <h1 id="numeroDado3"><i class="fa-solid fa-dice-d6"></i></h1>
+            <button class="btn btn-success mx-auto" id="dado3">DADO <strong>6</strong></button>
         </div>
-        
-        <div class="d-flex flex-column text-center mx-2">
-            <label for="caballero">Caballeria</label>
-            <input id="caballero" type="text">
-        </div>
-        
-        <div class="d-flex flex-column text-center mx-2">
-            <label for="boniDeGeneral">Bonificacion de General</label>
-            <input id="boniDeGeneral" type="text">
-        </div>
-        
-        <div class="d-flex flex-column text-center mx-2">
-            <label for="boniDeCasilla">Bonificacion de Casilla</label>
-            <input id="boniDeCasilla" type="text">
-        </div>
-        
         
     </div>
 
-    <div class="container d-flex justify-content-center my-3 flex-column">
-        <h1 class="mt-3 border border-3 mx-auto p-4 " id="Resultado"  style="background-color: #FEFBE7;">Resultado</h1>
-        <button class="btn btn-success mx-auto" id="buttonResultado">Pulsar</button>
     </div>
 
-    <div class="container d-flex justify-content-center my-3">
+    
 
-        <div id="divDado20" class="d-flex flex-column text-center mx-2">
-            <h1 id="numeroDado1">Dado de 20</h1>
-            <button class="btn btn-success mx-auto" id="dado1">DADO 20</button>
-        </div>
-        
-        <div id="divDado10" class="d-flex flex-column text-center mx-2">
-            <h1 id="numeroDado2">Dado de 10</h1>
-            <button class="btn btn-success mx-auto" id="dado2">DADO 10</button>
-        </div>
-        
-        <div id="divDado6" class="d-flex flex-column text-center mx-2">
-            <h1 id="numeroDado3">Dado de 6</h1>
-            <button class="btn btn-success mx-auto" id="dado3">DADO 6</button>
-        </div>
-        
-
-    </div>
+    
 
     <div class="container d-flex justify-content-center my-3">
-        <h1 class="mt-3 border border-3 me-2 p-4 " id="resultadoFinal2"  style="background-color: #FFC4DD;">EJERCITO 1</h1>
-        <h1 class="mt-3 border border-3 ms-2 p-4 " id="resultadoFinal"  style="background-color: #FFC4DD;">EJERCITO 2</h1>
+        <h1 class="mt-3 border border-3 me-2 p-4 " id="resultadoFinal2"  style="background-color: #FEFBE7; border-radius: 30px;">EJERCITO 1</h1>
+        <h1 class="mt-3 border border-3 ms-2 p-4 " id="resultadoFinal"  style="background-color: #FEFBE7; border-radius: 30px;">EJERCITO 2</h1>
     </div>
 
 
